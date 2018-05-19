@@ -15,6 +15,7 @@
 		04C7C6C520B021190045C14C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C7C6C320B021190045C14C /* LaunchScreen.storyboard */; };
 		04C7C6D020B021190045C14C /* MiYiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7C6CF20B021190045C14C /* MiYiTests.m */; };
 		04C7C6DB20B021190045C14C /* MiYiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7C6DA20B021190045C14C /* MiYiUITests.m */; };
+		3B77F8BFB6182926D3FB2BD0 /* libPods-MiYi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 549C5E0881358AE7ABD7D61B /* libPods-MiYi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		04C7C6D620B021190045C14C /* MiYiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiYiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C7C6DA20B021190045C14C /* MiYiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiYiUITests.m; sourceTree = "<group>"; };
 		04C7C6DC20B021190045C14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		549C5E0881358AE7ABD7D61B /* libPods-MiYi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiYi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1D560E26D86825546A1B87 /* Pods-MiYi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiYi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiYi/Pods-MiYi.debug.xcconfig"; sourceTree = "<group>"; };
+		FFD96609B256A16B554F6E1F /* Pods-MiYi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiYi.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiYi/Pods-MiYi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B77F8BFB6182926D3FB2BD0 /* libPods-MiYi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				04C7C6CE20B021190045C14C /* MiYiTests */,
 				04C7C6D920B021190045C14C /* MiYiUITests */,
 				04C7C6B320B021190045C14C /* Products */,
+				7679CB8F9E9A58A826072CF4 /* Pods */,
+				50935DC1BD86B34160F8229F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +147,23 @@
 			path = MiYiUITests;
 			sourceTree = "<group>";
 		};
+		50935DC1BD86B34160F8229F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				549C5E0881358AE7ABD7D61B /* libPods-MiYi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7679CB8F9E9A58A826072CF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB1D560E26D86825546A1B87 /* Pods-MiYi.debug.xcconfig */,
+				FFD96609B256A16B554F6E1F /* Pods-MiYi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C7C6DF20B021190045C14C /* Build configuration list for PBXNativeTarget "MiYi" */;
 			buildPhases = (
+				9D0204507B3FFE0A7908351A /* [CP] Check Pods Manifest.lock */,
 				04C7C6AE20B021190045C14C /* Sources */,
 				04C7C6AF20B021190045C14C /* Frameworks */,
 				04C7C6B020B021190045C14C /* Resources */,
+				BA4F6D15F0F5022F6A69E330 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,6 +296,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D0204507B3FFE0A7908351A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiYi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA4F6D15F0F5022F6A69E330 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MiYi/Pods-MiYi-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MWPhotoBrowser/MWPhotoBrowser.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiYi/Pods-MiYi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04C7C6AE20B021190045C14C /* Sources */ = {
@@ -425,6 +492,7 @@
 		};
 		04C7C6E020B021190045C14C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB1D560E26D86825546A1B87 /* Pods-MiYi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H5MTEZK6R2;
@@ -437,6 +505,7 @@
 		};
 		04C7C6E120B021190045C14C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFD96609B256A16B554F6E1F /* Pods-MiYi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H5MTEZK6R2;

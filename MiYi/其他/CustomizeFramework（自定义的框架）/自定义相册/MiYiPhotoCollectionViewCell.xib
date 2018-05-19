@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MiYiPhotoCollectionViewCell" id="gTV-IL-0wX" customClass="MiYiPhotoCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YjS-p8-jJT">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+                    </imageView>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-wL-lOe">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+                        <subviews>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lr0-le-mgC">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose.png" translatesAutoresizingMaskIntoConstraints="NO" id="jTJ-NU-Cky">
+                                <rect key="frame" x="130" y="5" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Adm-u4-x70"/>
+                                    <constraint firstAttribute="width" constant="15" id="kos-UO-Fe7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lr0-le-mgC" firstAttribute="top" secondItem="gJ6-wL-lOe" secondAttribute="top" id="OMf-Aq-aJn"/>
+                            <constraint firstItem="lr0-le-mgC" firstAttribute="leading" secondItem="gJ6-wL-lOe" secondAttribute="leading" id="SPs-mf-Z7a"/>
+                            <constraint firstAttribute="bottom" secondItem="lr0-le-mgC" secondAttribute="bottom" id="WtT-T0-AN9"/>
+                            <constraint firstItem="jTJ-NU-Cky" firstAttribute="top" secondItem="gJ6-wL-lOe" secondAttribute="top" constant="5" id="XDW-qO-BP2"/>
+                            <constraint firstAttribute="trailing" secondItem="lr0-le-mgC" secondAttribute="trailing" id="cmS-HI-HoB"/>
+                            <constraint firstAttribute="trailing" secondItem="jTJ-NU-Cky" secondAttribute="trailing" constant="5" id="uvn-an-mAX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="YjS-p8-jJT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="42n-Ej-QTR"/>
+                <constraint firstAttribute="trailing" secondItem="gJ6-wL-lOe" secondAttribute="trailing" id="8jB-7r-HVd"/>
+                <constraint firstItem="gJ6-wL-lOe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9Vc-wM-vTJ"/>
+                <constraint firstAttribute="bottom" secondItem="YjS-p8-jJT" secondAttribute="bottom" id="ERr-dP-a5V"/>
+                <constraint firstAttribute="trailing" secondItem="YjS-p8-jJT" secondAttribute="trailing" id="JxH-O8-ipH"/>
+                <constraint firstItem="gJ6-wL-lOe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LIT-jB-8fI"/>
+                <constraint firstItem="YjS-p8-jJT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZUf-wg-N1P"/>
+                <constraint firstAttribute="bottom" secondItem="gJ6-wL-lOe" secondAttribute="bottom" id="bpg-wX-Jud"/>
+            </constraints>
+            <size key="customSize" width="150" height="130"/>
+            <connections>
+                <outlet property="imageView" destination="YjS-p8-jJT" id="v9O-UN-exT"/>
+                <outlet property="maskView" destination="lr0-le-mgC" id="yCF-Ij-t2r"/>
+                <outlet property="selectedView" destination="gJ6-wL-lOe" id="dgi-y9-lbk"/>
+            </connections>
+            <point key="canvasLocation" x="390" y="351"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="choose.png" width="22" height="22"/>
+    </resources>
+</document>

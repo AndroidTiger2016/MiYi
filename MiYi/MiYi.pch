@@ -1,0 +1,122 @@
+//
+//  PrefixHeader.pch
+//  MiYi
+//
+//  Created by 叶星龙 on 15/7/20.
+//  Copyright (c) 2015年 北京美耶时尚信息科技有限公司. All rights reserved.
+//
+#ifdef __OBJC__
+#import "Masonry.h"
+#import <MJExtension.h>
+#import <UIImageView+WebCache.h>
+#import <AFNetworking.h>
+#import <UIProgressView+AFNetworking.h>
+
+#import "MiYiCommonFunc.h"
+#import "Base64.h"
+#include "xxtea.h"
+#endif
+
+
+// 屏幕大小
+#define kScreenBounds [[UIScreen                          mainScreen]bounds]
+#define kWindowWidth  ([[UIScreen mainScreen]             bounds].size.width)
+#define kWindowHeight ([[UIScreen mainScreen]             bounds].size.height)
+
+#ifndef CGWidth
+#define CGWidth(rect)                   rect.size.width
+#endif
+
+#ifndef CGHeight
+#define CGHeight(rect)                  rect.size.height
+#endif
+
+#ifndef CGOriginX
+#define CGOriginX(rect)                 rect.origin.x
+#endif
+
+#ifndef CGOriginY
+#define CGOriginY(rect)                 rect.origin.y
+#endif
+
+#define iOSDevice [[UIDevice currentDevice].systemVersion doubleValue]
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+// 细字体
+#define Font(F)                 [UIFont systemFontOfSize:(F)]
+// 粗字体
+#define boldFont(F)             [UIFont boldSystemFontOfSize:(F)]
+// 标准的RGBA设置
+#define UIColorRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+// 十六进制色值
+#define UIColorFromRGB_HEX(rgbValue)        [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+// 十六进制色值加透明度
+#define UIColorFromRGBA_HEX(rgbV,alphaV)    [UIColor colorWithRed:((float)((rgbV & 0xFF0000) >> 16))/255.0 green:((float)((rgbV & 0xFF00) >> 8))/255.0 blue:((float)(rgbV & 0xFF))/255.0 alpha:alphaV]
+
+#define HEX_COLOR_THEME             UIColorFromRGB_HEX(0Xfc95ca)//主题颜色
+
+#define HEX_COLOR_VIEW_BACKGROUND   UIColorRGBA(238, 238, 238, 1) //视图底色
+
+
+#ifndef __has_feature
+// not LLVM Compiler
+#define __has_feature(x) 0
+#endif
+
+#if __has_feature(objc_arc)
+#define ARC
+#endif
+
+//侧滑通知
+#define MiYiSideslipVCSideslipNotification   @"sideslip"
+//点击中间停止滑动
+#define MiYiHomeVCStopSlide                  @"stopSlide"
+//tabbar圆圈点击
+#define MiYiTabBarViewControllerTabBarCircle @"Circle"
+
+//图片
+#define MiYiUnitedStatesTakeShowVCImage @"UnitedStatesTakeShowImage"
+//跳转通知
+#define MiYiHomeVCjumpVC                     @"jump"
+//改变nav登录状态
+#define MiYiHomeVCNavItemNotification        @"navItem"
+//头像点击
+#define MiYiClickUserIcon @"userIcon"
+
+//第三方ID
+#warning 第三方的ID需要添加
+
+#define makr
+
+
+
+#define Notification [NSNotificationCenter   defaultCenter]
+
+// 忽略debug NSlog
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif

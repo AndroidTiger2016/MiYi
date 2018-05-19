@@ -22,14 +22,14 @@ static NSString * AFURLEncodedStringFromString(NSString *string) {
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)string, NULL, (CFStringRef)kAFLegalCharactersToBeEscaped, CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding))) ;
 }
 
- NSString * AFQueryStringFromParameters(NSDictionary *parameters) {
-    NSMutableArray *mutableParameterComponents = [NSMutableArray array];
-    for (id key in [parameters allKeys]) {
-        NSString *component = [NSString stringWithFormat:@"%@=%@", AFURLEncodedStringFromString([key description]), AFURLEncodedStringFromString([[parameters valueForKey:key] description])];
-        [mutableParameterComponents addObject:component];
-    }
-    return [mutableParameterComponents componentsJoinedByString:@"&"];
-}
+// NSString * AFQueryStringFromParameters(NSDictionary *parameters) {
+//    NSMutableArray *mutableParameterComponents = [NSMutableArray array];
+//    for (id key in [parameters allKeys]) {
+//        NSString *component = [NSString stringWithFormat:@"%@=%@", AFURLEncodedStringFromString([key description]), AFURLEncodedStringFromString([[parameters valueForKey:key] description])];
+//        [mutableParameterComponents addObject:component];
+//    }
+//    return [mutableParameterComponents componentsJoinedByString:@"&"];
+//}
 
 @implementation MiYiRequestManager
 

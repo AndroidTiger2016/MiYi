@@ -2744,12 +2744,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		04C5418520B029D200C09DC8 /* Main */ = {
+		04C5418520B029D200C09DC8 /* Main（主页面） */ = {
 			isa = PBXGroup;
 			children = (
 				04C5418620B029D200C09DC8 /* VC */,
 				04C5419120B029D200C09DC8 /* View */,
 			);
+			name = "Main（主页面）";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -2900,13 +2901,14 @@
 			path = "预览";
 			sourceTree = "<group>";
 		};
-		04C541C620B029D200C09DC8 /* Newfeature（新特性） */ = {
+		04C541C620B029D200C09DC8 /* Newfeature（启动广告界面） */ = {
 			isa = PBXGroup;
 			children = (
 				04C541C720B029D200C09DC8 /* Model */,
 				04C541CA20B029D200C09DC8 /* VC */,
 				04C541CD20B029D200C09DC8 /* View */,
 			);
+			name = "Newfeature（启动广告界面）";
 			path = "Newfeature（新特性）";
 			sourceTree = "<group>";
 		};
@@ -3534,21 +3536,21 @@
 			isa = PBXGroup;
 			children = (
 				04C53F6D20B029D100C09DC8 /* 其他 */,
-				04C5400B20B029D100C09DC8 /* Community（社区（美美搭）） */,
-				04C5404F20B029D100C09DC8 /* Home（首页（蜜意）） */,
-				04C5406B20B029D100C09DC8 /* ImageS（素材） */,
-				04C5417420B029D200C09DC8 /* Login（登录注册） */,
-				04C5418520B029D200C09DC8 /* Main */,
-				04C5419A20B029D200C09DC8 /* Menu（菜单（发布）） */,
-				04C541C620B029D200C09DC8 /* Newfeature（新特性） */,
 				04C541CE20B029D200C09DC8 /* Sidebar(侧边栏) */,
 				04C7C6B820B021190045C14C /* AppDelegate.h */,
 				04C7C6B920B021190045C14C /* AppDelegate.m */,
+				04C541C620B029D200C09DC8 /* Newfeature（启动广告界面） */,
+				04C5417420B029D200C09DC8 /* Login（登录注册） */,
+				04C5418520B029D200C09DC8 /* Main（主页面） */,
+				04C5404F20B029D100C09DC8 /* Home（首页（蜜意）） */,
+				04C5419A20B029D200C09DC8 /* Menu（菜单（发布）） */,
+				04C5400B20B029D100C09DC8 /* Community（社区（美美搭）） */,
 				04C7C6BB20B021190045C14C /* ViewController.h */,
 				04C7C6BC20B021190045C14C /* ViewController.m */,
 				04C53F6320B0265800C09DC8 /* MiYi.pch */,
 				04C53F6720B0286A00C09DC8 /* brand.plist */,
 				04C53F6820B0286A00C09DC8 /* feature.plist */,
+				04C5406B20B029D100C09DC8 /* ImageS（素材） */,
 				04C7C6BE20B021190045C14C /* Main.storyboard */,
 				04C7C6C120B021190045C14C /* Assets.xcassets */,
 				04C7C6C320B021190045C14C /* LaunchScreen.storyboard */,

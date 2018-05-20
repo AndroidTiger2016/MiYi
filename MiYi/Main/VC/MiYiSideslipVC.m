@@ -12,7 +12,7 @@
 #import "MiYiUserSession.h"
 #import "MiYiUser.h"
 #import <UIImageView+WebCache.h>
-#import "MiYiHomeVC.h"
+//#import "MiYiHomeVC.h"
 #import "MiYiNavViewController.h"
 #import "MiYiUserVC.h"
 #import "MiYiSettingVC.h"

@@ -118,62 +118,70 @@
 
 -(void)clickButtonLogin{
     [self.view endEditing:YES];
-
-    if(textFieldAccount.textField.text.length<11)
-    {
-        [MBProgressHUD showError:@"请输入完整的手机号"];
-        return;
-    }
-    if(![textFieldAccount isValidPhone])
-    {
-        [MBProgressHUD showError:@"请输入正确的手机号"];
-        return;
-    }
-    [MBProgressHUD showMessage:nil];
-    [MiYiUserRequest loginWithPhoneNumber:textFieldAccount.textField.text json:^(id json) {
-         NSNumber *ret =json[@"ret"];
-        [MBProgressHUD hideHUD];
-        if ([ret integerValue]!=0) {
-            [MBProgressHUD showError:@"登录失败"];
-            return ;
-        }
-        [MBProgressHUD showSuccess:@"登录成功"];
-//        NSString *newUser = json[@"data"][@"is_new"];
-//
-//        NSLog(@"%@", newUser);
-//        if ([newUser intValue]) {
-//            MiYiAddUserInfoVC *addUserInfoVC = [[MiYiAddUserInfoVC alloc] init];
-//            NSArray *images = [NSArray arrayWithObjects:@"AmericaStyle", @"clearStyle", @"JSStyle", @"LeisureStyle", @"qingshuStyle", @"retoStyle", @"schoolStyle", @"sengnvStyle", @"sportStyle",nil];
-//            NSArray *titles = [NSArray arrayWithObjects:@"欧美风", @"小清新", @"日韩范", @"休闲", @"轻熟", @"复古", @"学院风", @"森女系", @"运动", nil];
-//
-//            NSMutableDictionary *content = [[NSMutableDictionary alloc] init];
-//            for (int i = 0; i < images.count; i++) {
-//                content[images[i]] = titles[i];
-//            }
-//
-//            [addUserInfoVC setInit:@"你的日常穿着更接近那种风格呢" withImage:@"style" withContent:content withPos:1];
-//            MiYiNavViewController *nav =[[MiYiNavViewController alloc]initWithRootViewController:addUserInfoVC];
-//            [self presentViewController:nav animated:YES completion:nil];
-//        }
-        [MiYiUserRequest userInfoId:[[MiYiUserSession shared] session].uid json:^(id json) {
-            if ([json  isEqual: @YES]) {
-                if (_isWindow) {
-                   [self dismissViewControllerAnimated:YES completion:^{
-                       [Notification postNotificationName:MiYiHomeVCNavItemNotification object:nil];
-                   }];
-                }else{
-                    [Notification postNotificationName:MiYiHomeVCNavItemNotification object:nil];
-                    UIWindow *screenWindow = [[UIApplication  sharedApplication] keyWindow];
-                    screenWindow.rootViewController=[MiYiSideslipVC shared];
-                }
-            }
-        } error:^(NSError *error) {
-            [MBProgressHUD showError:@"获取用户信息失败\n可能网络出现问题"];
-        }];
-    } error:^(NSError *error) {
-        [MBProgressHUD hideHUD];
-        [MBProgressHUD showError:@"登录失败"];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        [Notification postNotificationName:MiYiHomeVCNavItemNotification object:nil];
     }];
+
+//    [Notification postNotificationName:MiYiHomeVCNavItemNotification object:nil];
+//    UIWindow *screenWindow = [[UIApplication  sharedApplication] keyWindow];
+//    screenWindow.rootViewController=[MiYiSideslipVC shared];
+
+//    if(textFieldAccount.textField.text.length<11)
+//    {
+//        [MBProgressHUD showError:@"请输入完整的手机号"];
+//        return;
+//    }
+//    if(![textFieldAccount isValidPhone])
+//    {
+//        [MBProgressHUD showError:@"请输入正确的手机号"];
+//        return;
+//    }
+//    [MBProgressHUD showMessage:nil];
+//    [MiYiUserRequest loginWithPhoneNumber:textFieldAccount.textField.text json:^(id json) {
+//         NSNumber *ret =json[@"ret"];
+//        [MBProgressHUD hideHUD];
+//        if ([ret integerValue]!=0) {
+//            [MBProgressHUD showError:@"登录失败"];
+//            return ;
+//        }
+//        [MBProgressHUD showSuccess:@"登录成功"];
+////        NSString *newUser = json[@"data"][@"is_new"];
+////
+////        NSLog(@"%@", newUser);
+////        if ([newUser intValue]) {
+////            MiYiAddUserInfoVC *addUserInfoVC = [[MiYiAddUserInfoVC alloc] init];
+////            NSArray *images = [NSArray arrayWithObjects:@"AmericaStyle", @"clearStyle", @"JSStyle", @"LeisureStyle", @"qingshuStyle", @"retoStyle", @"schoolStyle", @"sengnvStyle", @"sportStyle",nil];
+////            NSArray *titles = [NSArray arrayWithObjects:@"欧美风", @"小清新", @"日韩范", @"休闲", @"轻熟", @"复古", @"学院风", @"森女系", @"运动", nil];
+////
+////            NSMutableDictionary *content = [[NSMutableDictionary alloc] init];
+////            for (int i = 0; i < images.count; i++) {
+////                content[images[i]] = titles[i];
+////            }
+////
+////            [addUserInfoVC setInit:@"你的日常穿着更接近那种风格呢" withImage:@"style" withContent:content withPos:1];
+////            MiYiNavViewController *nav =[[MiYiNavViewController alloc]initWithRootViewController:addUserInfoVC];
+////            [self presentViewController:nav animated:YES completion:nil];
+////        }
+//        [MiYiUserRequest userInfoId:[[MiYiUserSession shared] session].uid json:^(id json) {
+//            if ([json  isEqual: @YES]) {
+//                if (_isWindow) {
+//                   [self dismissViewControllerAnimated:YES completion:^{
+//                       [Notification postNotificationName:MiYiHomeVCNavItemNotification object:nil];
+//                   }];
+//                }else{
+//                    [Notification postNotificationName:MiYiHomeVCNavItemNotification object:nil];
+//                    UIWindow *screenWindow = [[UIApplication  sharedApplication] keyWindow];
+//                    screenWindow.rootViewController=[MiYiSideslipVC shared];
+//                }
+//            }
+//        } error:^(NSError *error) {
+//            [MBProgressHUD showError:@"获取用户信息失败\n可能网络出现问题"];
+//        }];
+//    } error:^(NSError *error) {
+//        [MBProgressHUD hideHUD];
+//        [MBProgressHUD showError:@"登录失败"];
+//    }];
 
 }
 
